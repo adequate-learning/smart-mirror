@@ -1,0 +1,5 @@
+<h2>New Tile</h2>
+
+<%= render "form.html", Map.put(assigns, :action, tile_path(@conn, :create)) %>
+
+<span><%= link "Back", to: tile_path(@conn, :index) %></span>

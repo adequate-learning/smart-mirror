@@ -1,0 +1,13 @@
+<h2>Show Tile</h2>
+
+<ul>
+
+  <li>
+    <strong>Body:</strong>
+    <%= @tile.body %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: tile_path(@conn, :edit, @tile) %></span>
+<span><%= link "Back", to: tile_path(@conn, :index) %></span>
