@@ -10,8 +10,8 @@
     BTC kurs
   </div>
   <div id="raspberry-data">
+  <%= if @tile do %>
     <ul>
-
       <li>
         <strong>Name:</strong>
         <%= @tile.name %>
@@ -33,5 +33,6 @@
       </li>
 
     </ul>
+  <%= end %>
   </div>
 </div>

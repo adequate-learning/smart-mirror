@@ -120,14 +120,16 @@ def post_data(distance, temperature, humidity, name):
     data = {
         'tile': {
             'name': name,
-            'temperature': temperature,
-            'humidity': humidity,
-            'distance': distance
+            'temperature': int(temperature),
+            'humidity': int(humidity),
+            'distance': int(distance)
         }
     }
     url = 'http://localhost:4000/api/tiles' 
     response = requests.post(url, json=data)
-    print(response)
+    print(response.status_code)
+    print(response.text)
+    print(response.json())
     return response
   
   
@@ -152,4 +154,5 @@ try:
 except KeyboardInterrupt:
     print("Done...")
 
-GPIO.cleanup()
+finally:
+    GPIO.cleanup()

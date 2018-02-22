@@ -11,8 +11,6 @@ defmodule SmartMirrorWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
-    #get "/", TileController, :index
-    #get "/tiles/:id", TileController, :show
   end
 
   scope "/", SmartMirrorWeb do
@@ -24,13 +22,8 @@ defmodule SmartMirrorWeb.Router do
 
   # Other scopes may use custom stacks.
    scope "/api", SmartMirrorWeb do
-
      pipe_through :api
 
-     resources "/tiles", TileController
-     #get "/tiles", Tilecontroller, :index
-     #get "/tiles/:id", TileController, :show
-     #get "/", TileController, :index
-     #get "/tiles", TileController, :show
+     resources "/tiles", TileController, except: [:new, :edit]
    end
 end

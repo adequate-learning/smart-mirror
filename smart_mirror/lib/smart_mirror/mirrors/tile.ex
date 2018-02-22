@@ -16,7 +16,7 @@ defmodule SmartMirror.Mirrors.Tile do
   @doc false
   def changeset(%Tile{} = tile, attrs) do
     tile
-    |> cast(attrs, [:name, :temperature, :humidity, :distance])
-    #|> validate_required([:name, :temperature, :humidity, :distance])
+    |> cast(attrs, [:name, :distance, :temperature, :humidity])
+    # |> validate_required([:name, :distance, :temperature, :humidity])
   end
 end
