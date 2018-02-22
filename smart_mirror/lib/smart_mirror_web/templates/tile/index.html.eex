@@ -1,0 +1,32 @@
+<h2>Listing Tiles</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Temperature</th>
+      <th>Humidity</th>
+      <th>Distance</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for tile <- @tiles do %>
+    <tr>
+      <td><%= tile.name %></td>
+      <td><%= tile.temperature %></td>
+      <td><%= tile.humidity %></td>
+      <td><%= tile.distance %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: tile_path(@conn, :show, tile), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: tile_path(@conn, :edit, tile), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: tile_path(@conn, :delete, tile), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Tile", to: tile_path(@conn, :new) %></span>

@@ -1,0 +1,28 @@
+<h2>Show Tile</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @tile.name %>
+  </li>
+
+  <li>
+    <strong>Temperature:</strong>
+    <%= @tile.temperature %>
+  </li>
+
+  <li>
+    <strong>Humidity:</strong>
+    <%= @tile.humidity %>
+  </li>
+
+  <li>
+    <strong>Distance:</strong>
+    <%= @tile.distance %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: tile_path(@conn, :edit, @tile) %></span>
+<span><%= link "Back", to: tile_path(@conn, :index) %></span>
