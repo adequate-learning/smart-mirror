@@ -1,38 +1,64 @@
-<div class="row, first-row">
+<script>
+  (function(b,i,t,C,O,I,N) {
+    window.addEventListener('load',function() {
+      if(b.getElementById(C))return;
+      I=b.createElement(i),N=b.getElementsByTagName(i)[0];
+      I.src=t;I.id=C;N.parentNode.insertBefore(I, N);
+    },false)
+  })(document,'script','https://widgets.bitcoin.com/widget.js','btcwdgt');
+</script>
+<a href="https://www.accuweather.com/en/de/hamburg/20095/weather-forecast/178556" class="aw-widget-legal">
+</a><script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
 
-  <div class="col-md-3">
-    Weather placeholder
+<div class="container-fluid">
+  <div class="row first-row">
+
+    <div class="col-md-3 col-sm-3 left-column">
+      <div id="awcc1519305452190" class="aw-widget-current"  data-locationkey="178556" data-unit="c" data-language="en-us" data-useip="false" data-uid="awcc1519305452190"></div>
+    </div>
+    <div class="col-md-6 col-sm-6 mid-column greeting">
+      Hi <%= @tile.name %>!
+    </div>
+    <div class="col-md-3 col-sm-6 right-column">
+      <div class="btcwdgt-chart"></div>
+    </div>
   </div>
-  <div class="col-md-6">
-    olololololololol
+
+  <div class="row second-row">
+    <div class="col-md-3 col-sm-3 left-column" id="raspberry-data">
+      <%= if @tile do %>
+        <div>
+          <strong>Temperature:</strong>
+          <%= @tile.temperature %>
+        </div>
+        <div>
+          <strong>Humidity:</strong>
+          <%= @tile.humidity %>
+        </div>
+      <%= end %>
+    </div>
+    <div class="col-md-6 col-sm-6 mid-column">
+    </div>
+
+    <div class="col-md-3 col-sm-6 right-column">
+    </div>
+
   </div>
-  <div class="col-md-3">
-    BTC kurs
+
+  <div class="row third-row">
+    <div class="col-md-3 col-sm-6 left-column">
+    </div>
+
+    <div class="col-md-6 col-sm-6 mid-column">
+      <%= if @tile.distance >= 120.0 do %>
+          <div>
+            You are too far away please come closer!
+          </div>
+      <%= end%>
+    </div>
+
+    <div class="col-md-3 col-sm-6 right-column">
+    </div>
   </div>
-  <div id="raspberry-data">
-  <%= if @tile do %>
-    <ul>
-      <li>
-        <strong>Name:</strong>
-        <%= @tile.name %>
-      </li>
 
-      <li>
-        <strong>Temperature:</strong>
-        <%= @tile.temperature %>
-      </li>
-
-      <li>
-        <strong>Humidity:</strong>
-        <%= @tile.humidity %>
-      </li>
-
-      <li>
-        <strong>Distance:</strong>
-        <%= @tile.distance %>
-      </li>
-
-    </ul>
-  <%= end %>
-  </div>
 </div>

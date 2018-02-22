@@ -18,5 +18,28 @@ body {
   color: white;
 }
 
+.first-row {
+  font-size: 30px;
+  min-height: 360px;
+}
+
+.greeting {
+  text-align: center;
+  font-size: 40px;
+}
+
+.left-column {
+  text-align: left;
+}
+
+.right-column {
+  text-align: right;
+}
+
+.second-row {
+  margin-top: 40px;
+  min-height: 700px;
+}
+
 
 /*# sourceMappingURL=app.css.map*/
